@@ -43,26 +43,65 @@
 //     }
 // }
  
-// Задача 2: Напишите программу вычисления функции Аккермана с помощью рекурсии. 
-// Даны два неотрицательных числа m и n.
+// // Задача 2: Напишите программу вычисления функции Аккермана с помощью рекурсии. 
+// // Даны два неотрицательных числа m и n.
 
-int m = InputNumbers("Введите m: ");
-int n = InputNumbers("Введите n: ");
+// int m = InputNumbers("Введите m: ");
+// int n = InputNumbers("Введите n: ");
 
-int functionAkkerman = Ack(m, n);
+// int functionAkkerman = Ack(m, n);
 
-Console.Write($"Функция Аккермана = {functionAkkerman} ");
+// Console.Write($"Функция Аккермана = {functionAkkerman} ");
 
-int Ack(int m, int n)
-{
-  if (m == 0) return n + 1;
-  else if (n == 0) return Ack(m - 1, 1);
-  else return Ack(m - 1, Ack(m, n - 1));
-}
+// int Ack(int m, int n)
+// {
+//   if (m == 0) return n + 1;
+//   else if (n == 0) return Ack(m - 1, 1);
+//   else return Ack(m - 1, Ack(m, n - 1));
+// }
 
-int InputNumbers(string input) 
-{
-  Console.Write(input);
-  int output = Convert.ToInt32(Console.ReadLine());
-  return output;
-}
+// int InputNumbers(string input) 
+// {
+//   Console.Write(input);
+//   int output = Convert.ToInt32(Console.ReadLine());
+//   return output;
+// }
+
+// Задача 3: Задайте произвольный массив. Выведете его элементы, начиная с конца.
+// Использовать рекурсию, не использовать циклы.
+
+    
+
+// Инициализируем массив
+
+int[] arr = { 1, 2, 3, 4, 5 };
+
+
+// Вызываем рекурсивную функцию для вывода элементов массива
+
+ PrintArrayReverse(arr, arr.Length - 1);
+
+    
+void PrintArrayReverse(int[] arr, int index)
+
+    {
+
+        // Если индекс становится отрицательным, выходим из рекурсии
+
+        if (index < 0)
+
+            return;
+
+
+
+        // Выводим элемент массива с текущим индексом
+
+        Console.WriteLine(arr[index]);
+
+
+
+        // Рекурсивно вызываем функцию для вывода следующего элемента с меньшим индексом
+
+        PrintArrayReverse(arr, index - 1);
+
+    }
